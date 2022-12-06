@@ -12,5 +12,5 @@
 - [Day07: группировки](day07.sql)
 - [Day08: TRANSACTIONs, уровни изоляции](day08.sql)
 - [Day09: FUNCTIONs, TRIGGERs](day09.sql)
-- [Team00: задача коммивояжера, RECURSIVE CTE](team00.sql)
-- [Team01: data workflow](team01.sql)
+- [Add00: задача коммивояжера, RECURSIVE CTE](add00.sql)
+- [Add01: data workflow](add01.sql)
