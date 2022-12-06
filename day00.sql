@@ -1,33 +1,33 @@
-FILE ./ex00/day00_ex00.sql
+-- FILE ./ex00/day00_ex00.sql
 
 SELECT p.name, p.age
 FROM person p
 WHERE p.address = 'Kazan';
-
+/*
   name  | age 
 --------+-----
  Kate   |  33
  Denis  |  13
  Elvira |  45
 (3 rows)
+*/
 
-
-FILE ./ex01/day00_ex01.sql
+-- FILE ./ex01/day00_ex01.sql
 
 SELECT p.name, p.age
 FROM person p
 WHERE p.gender = 'female'
   AND p.address = 'Kazan'
 ORDER BY p.name ASC;
-
+/*
   name  | age 
 --------+-----
  Elvira |  45
  Kate   |  33
 (2 rows)
+*/
 
-
-FILE ./ex02/day00_ex02.sql
+-- FILE ./ex02/day00_ex02.sql
 
 SELECT pz.name, pz.rating
 FROM pizzeria pz
@@ -39,7 +39,7 @@ SELECT pz.name, pz.rating
 FROM pizzeria pz
 WHERE pz.rating BETWEEN 3.5 AND 5.0
 ORDER BY pz.rating ASC;
-
+/*
     name    | rating 
 ------------+--------
  DinoPizza  |    4.2
@@ -51,16 +51,16 @@ ORDER BY pz.rating ASC;
  DinoPizza  |    4.2
  Papa Johns |    4.9
 (2 rows)
+*/
 
-
-FILE ./ex03/day00_ex03.sql
+-- FILE ./ex03/day00_ex03.sql
 
 SELECT DISTINCT pv.person_id
 FROM person_visits pv
 WHERE (pv.visit_date BETWEEN '2022-01-06' AND '2022-01-09')
    OR (pv.pizzeria_id = 2)
 ORDER BY pv.person_id DESC;
-
+/*
  person_id 
 -----------
          9
@@ -71,9 +71,9 @@ ORDER BY pv.person_id DESC;
          4
          2
 (7 rows)
+*/
 
-
-FILE ./ex04/day00_ex04.sql
+-- FILE ./ex04/day00_ex04.sql
 
 select p.name ||
        ' (age:' || p.age || ',' ||
@@ -82,7 +82,7 @@ select p.name ||
            AS person_information
 FROM person p
 ORDER BY person_information ASC;
-
+/*
                     person_information                     
 -----------------------------------------------------------
  Andrey (age:21,gender:'male',address:'Moscow')
@@ -95,9 +95,9 @@ ORDER BY person_information ASC;
  Nataly (age:30,gender:'female',address:'Novosibirsk')
  Peter (age:24,gender:'male',address:'Saint-Petersburg')
 (9 rows)
+*/
 
-
-FILE ./ex05/day00_ex05.sql
+-- FILE ./ex05/day00_ex05.sql
 
 SELECT (SELECT p.name
         FROM person p
@@ -105,15 +105,15 @@ SELECT (SELECT p.name
 FROM person_order po
 WHERE (po.menu_id = 13 OR po.menu_id = 14 OR po.menu_id = 18)
   AND (po.order_date = '2022-01-07');
-
+/*
   name  
 --------
  Denis
  Nataly
 (2 rows)
+*/
 
-
-FILE ./ex06/day00_ex06.sql
+-- FILE ./ex06/day00_ex06.sql
 
 SELECT (SELECT p1.name
         FROM person p1
@@ -127,15 +127,15 @@ SELECT (SELECT p1.name
 FROM person_order po
 WHERE (po.menu_id = 13 OR po.menu_id = 14 OR po.menu_id = 18)
   AND po.order_date = '2022-01-07';
-
+/*
   name  | check_name 
 --------+------------
  Denis  | t
  Nataly | f
 (2 rows)
+*/
 
-
-FILE ./ex07/day00_ex07.sql
+-- FILE ./ex07/day00_ex07.sql
 
 SELECT p.id,
        p.name,
@@ -146,7 +146,7 @@ SELECT p.id,
            END AS interval_info
 FROM person p
 ORDER BY interval_info ASC;
-
+/*
  id |  name   | interval_info 
 ----+---------+---------------
   1 | Anna    | interval #1
@@ -159,15 +159,15 @@ ORDER BY interval_info ASC;
   7 | Peter   | interval #3
   3 | Kate    | interval #3
 (9 rows)
+*/
 
-
-FILE ./ex08/day00_ex08.sql
+-- FILE ./ex08/day00_ex08.sql
 
 SELECT *
 FROM person_order po
 WHERE MOD(po.id, 2) = 0
 ORDER BY po.id;
-
+/*
  id | person_id | menu_id | order_date 
 ----+-----------+---------+------------
   2 |         1 |       2 | 2022-01-01
@@ -182,9 +182,9 @@ ORDER BY po.id;
  20 |         9 |       6 | 2022-01-10
  22 |         6 |      20 | 2022-02-24
 (11 rows)
+*/
 
-
-FILE ./ex09/day00_ex09.sql
+-- FILE ./ex09/day00_ex09.sql
 
 SELECT (SELECT p.name
         FROM person p
@@ -196,7 +196,7 @@ FROM (SELECT *
       FROM person_visits
       WHERE visit_date BETWEEN '2022-01-07' AND '2022-01-09') AS pv
 ORDER BY person_name ASC, pizzeria_name DESC;
-
+/*
  person_name | pizzeria_name 
 -------------+---------------
  Denis       | DinoPizza
@@ -209,3 +209,4 @@ ORDER BY person_name ASC, pizzeria_name DESC;
  Irina       | Dominos
  Nataly      | Papa Johns
 (9 rows)
+*/
