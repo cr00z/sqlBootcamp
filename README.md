@@ -2,6 +2,8 @@
 
 > По соглашению с организаторами не выкладываю условия задач, только решения
 
+Basic:
+
 - [Day00: простые запросы](day00.sql)
 - [Day01: JOINs](day01.sql)
 - [Day02: JOINs again](day02.sql)
@@ -12,5 +14,8 @@
 - [Day07: группировки](day07.sql)
 - [Day08: TRANSACTIONs, уровни изоляции](day08.sql)
 - [Day09: FUNCTIONs, TRIGGERs](day09.sql)
+
+Additional:
+
 - [Add00: задача коммивояжера, RECURSIVE CTE](add00.sql)
 - [Add01: data workflow](add01.sql)
