@@ -154,8 +154,6 @@ SELECT *
 FROM person p
          CROSS JOIN pizzeria pz
 ORDER BY p.id, pz.id;
-/*
-*/
 
 -- FILE ./ex06/day01_ex06.sql
 
@@ -279,15 +277,6 @@ WHERE NOT EXISTS(
         FROM person_visits pv
         WHERE pv.pizzeria_id = pz.id
     );
-/*
- name 
-------
-(0 rows)
-
- name 
-------
-(0 rows)
-*/
 
 -- FILE ./ex10/day01_ex10.sql
 
